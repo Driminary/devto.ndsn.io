@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DEV.to @ndsn</title>
+  <link href="https://devto.ndsn.io/feed.xml" rel="self"/>
+  <link href="http://devto.ndsn.io/"/>
+  <updated>2020-07-26T22:43:38.884+01:00</updated>
+  <id>https://devto.ndsn.io/</id>
+  <author>
+    <name>Thomas Anderson</name>
+    <email>me@thomas-anderson.net</email>
+  </author>
+  
+  <entry>
+    <title>Sample Post</title>
+    <link href="http://devto.ndsn.io/posts/my-first-post/"/>
+    <updated>2020-07-26T22:43:38.884+01:00</updated>
+    <id>http://devto.ndsn.io/posts/my-first-post/</id>
+    <content type="html">&lt;p&gt;First post. &lt;a href=&quot;http://devto.ndsn.io/posts/my-first-post/test.html&quot;&gt;Test link&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

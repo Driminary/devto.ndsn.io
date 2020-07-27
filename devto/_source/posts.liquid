@@ -1,0 +1,14 @@
+---
+layout: base
+pagination:
+  data: devto.posts
+  size: 1
+  alias: item
+permalink: posts/{{ item.path }}/index.html
+---
+
+<p class="meta">Published on {{ item.pubDate }} <br/>by {{ item.author }}</p>
+<h2>{{ item.title }}</h2>
+<div class="post-content">
+  {{ item.description }}
+</div>

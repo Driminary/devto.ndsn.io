@@ -4,8 +4,9 @@ var toJSON = require("xml2js").parseString;
 var feed = process.env.DEVTO_FEED || "https://dev.to/feed/ndsn";
 
 async function getPosts() {
-    let response = await axios.get(feed);
-
+  return new Promise((resolve, reject) => {
+    let response = axios.get(feed)
+    .then((response) => {
     toJSON(response.data, { explicitArray: false, trim: true }, function (
       err,
       result
@@ -13,8 +14,10 @@ async function getPosts() {
       result.rss.channel.item.forEach((element) => {
         element.path = element.link.split("/").slice(-1)[0];
       });
-      return ({ feed: feed, posts: result.rss.channel.item });
+      resolve({ feed: feed, posts: result.rss.channel.item });
     });
+  });
+});
 };
 
-getPosts().then(data => console.log(data))
+getPosts().then(r => console.log(r))

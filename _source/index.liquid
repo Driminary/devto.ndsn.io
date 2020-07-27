@@ -1,0 +1,52 @@
+---
+title: Home
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="A list of all DEV.to posts by Tom Anderson (@ndsn)">
+	<meta name="author" content="Thomas Anderson">
+
+	<title>{{ title }}</title>
+
+</head>
+
+<body>
+
+<h1>@{{ devto.feed | split: '/' | last }} on Dev.to</h1>
+
+<p>Below you will find links to all the posts that I have published on <a href="https://dev.to">dev.to</a>.</p>
+
+<h2>Posts <small>(Pulled from <a href="{{ devto.feed }}">{{ devto.feed }}</a>)</small></h2>
+
+<hr>
+
+<ul>
+{% for item in devto.posts %}
+  <li>
+    <p>Published on {{ item.pubDate | date: "%A %e %B %Y at %I:%M%P" }} by <a href="{{ devto.feed }}">{{ item.author }}<a></p>
+    <h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
+	<h4>Categories: {{ item.category | join: ', '}}</h4>
+  </li>
+ {% endfor %}
+</ul>
+
+<hr>
+
+<p>🧡 Tom Anderson<br>
+<a href="http://www.thomas-anderson.net">www.thomas-anderson.net</a><br>
+<em>Liked something I did and want to help me out?</em><br>
+<a href="https://www.buymeacoffee.com/ndsn"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-orange?logo=Buy%20Me%20A%20Coffee&logoColor=white" alt="Buy me a coffee"></a>
+</p>
+<p>
+This site is open source!<br>
+<a href="https://github.com/Driminary/ndsn.io/"><img src="https://img.shields.io/badge/GitHub-Open%20Source-green?logo=GitHub&logoColor=white" alt="Source Code"></a>
+</p>
+
+</body>
+</html>

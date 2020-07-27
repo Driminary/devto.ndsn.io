@@ -1,7 +1,6 @@
 ---
 title: Why I use 11ty.io
 tags: posts
-categories: html, webdev, tutorial
 ---
 
 ## Web Development in 2020 is confusing...

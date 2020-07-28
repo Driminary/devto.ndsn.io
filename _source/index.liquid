@@ -18,11 +18,11 @@ title: Home
 
 <body>
 
-<h1>@{{ devtoapi.posts[0].user.username }} on Dev.to</h1>
+<h1>@ndsn on Dev.to</h1>
 
 <p>Below you will find links to all the posts that I have published on <a href="https://dev.to">dev.to</a>.</p>
 
-<h2>Posts <small>(Pulled from <a href="https://dev.to/{{ devtoapi.posts[0].user.username }}">https://dev.to/{{ devtoapi.posts[0].user.username }}</a>)</small></h2>
+<h2>Posts <small>(Pulled from <a href="{{ devtoapi.feed }}">{{ devtoapi.feed }}</a>)</small></h2>
 
 <hr>
 
@@ -32,7 +32,7 @@ title: Home
     <p>Published on {{ item.published_timestamp | date: "%A %e %B %Y at %I:%M%P" }} by <a href="https://dev.to/{{ item.user.username }}">{{ item.user.name }}<a></p>
     <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
 	<h4>Categories: {{ item.tag_list | join: ', ' }}</h4>
-	<h4>Views: {{ item.page_views_count }}</h4>
+	{% if item.page_views_count %}<h4>Views: {{ item.page_views_count }}</h4>{% endif %}
   </li>
  {% endfor %}
 </ul>

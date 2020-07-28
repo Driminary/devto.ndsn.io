@@ -1,7 +1,7 @@
 var axios = require("axios");
 
 var api_key = process.env.DEVTO_APIKEY || (() => { throw("No API Key Set!")})();
-var api_url = process.env.DEVTO_APIURL || "https://dev.to/api/articles/me";
+var api_url = process.env.DEVTO_APIURL || "https://dev.to/api/articles?username=ndsn";
 
 module.exports = (async () => {
     try {
@@ -12,7 +12,7 @@ module.exports = (async () => {
         },
       })
 
-    return { posts: response.data } 
+    return { feed: api_url, posts: response.data } 
     
     
 

@@ -1,53 +1,51 @@
----
-title: Home
----
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="A list of all DEV.to posts by Tom Anderson (@ndsn)" />
+    <meta name="author" content="Thomas Anderson" />
 
-<head>
+    <title>Home</title>
+  </head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="A list of all DEV.to posts by Tom Anderson (@ndsn)">
-	<meta name="author" content="Thomas Anderson">
+  <body>
+    <h1>@ndsn on Dev.to</h1>
 
-	<title>{{ title }}</title>
+    <p>Below you will find links to all the posts that I have published on <a href="https://dev.to">dev.to</a>.</p>
 
-</head>
+    <h2>
+      Posts <small>(Pulled from <a href="{{ devtoapi.feed }}">{{ devtoapi.feed }}</a>)</small>
+    </h2>
 
-<body>
+    <hr />
 
-<h1>@ndsn on Dev.to</h1>
+    <ul>
+      {% for item in devtoapi.posts %}
+      <li>
+        <p>Published on {{ item.published_timestamp | date: "%A %e %B %Y at %I:%M%P" }} by <a href="https://dev.to/{{ item.user.username }}">{{ item.user.name }}</a></p>
+        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+        <h4>Categories: {{ item.tag_list | join: ', ' }}</h4>
+        {% if item.page_views_count %}
+        <h4>Views: {{ item.page_views_count }}</h4>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
 
-<p>Below you will find links to all the posts that I have published on <a href="https://dev.to">dev.to</a>.</p>
+    <hr />
 
-<h2>Posts <small>(Pulled from <a href="{{ devtoapi.feed }}">{{ devtoapi.feed }}</a>)</small></h2>
-
-<hr>
-
-<ul>
-{% for item in devtoapi.posts %}
-  <li>
-    <p>Published on {{ item.published_timestamp | date: "%A %e %B %Y at %I:%M%P" }} by <a href="https://dev.to/{{ item.user.username }}">{{ item.user.name }}<a></p>
-    <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-	<h4>Categories: {{ item.tag_list | join: ', ' }}</h4>
-	{% if item.page_views_count %}<h4>Views: {{ item.page_views_count }}</h4>{% endif %}
-  </li>
- {% endfor %}
-</ul>
-
-<hr>
-
-<p>🧡 Tom Anderson<br>
-<a href="http://www.thomas-anderson.net">www.thomas-anderson.net</a><br>
-<em>Liked something I did and want to help me out?</em><br>
-<a href="https://www.buymeacoffee.com/ndsn"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-orange?logo=Buy%20Me%20A%20Coffee&logoColor=white" alt="Buy me a coffee"></a>
-</p>
-<p>
-This site is open source!<br>
-<a href="https://github.com/Driminary/ndsn.io/"><img src="https://img.shields.io/badge/GitHub-Open%20Source-green?logo=GitHub&logoColor=white" alt="Source Code"></a>
-</p>
-
-</body>
+    <p>
+      🧡 Tom Anderson<br />
+      <a href="http://www.thomas-anderson.net">www.thomas-anderson.net</a><br />
+      <em>Liked something I did and want to help me out?</em><br />
+      <a href="https://www.buymeacoffee.com/ndsn"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-orange?logo=Buy%20Me%20A%20Coffee&logoColor=white" alt="Buy me a coffee" /></a>
+    </p>
+    <p>
+      This site is open source!<br />
+      <a href="https://github.com/Driminary/ndsn.io/">
+      	<img src="https://img.shields.io/badge/GitHub-Open%20Source-green?logo=GitHub&logoColor=white" alt="Source Code" />
+      </a>
+    </p>
+  </body>
 </html>

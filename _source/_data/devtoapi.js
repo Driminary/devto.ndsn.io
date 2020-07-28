@@ -12,7 +12,9 @@ module.exports = (async () => {
         },
       })
 
-    return response.data
+    return { posts: response.data } 
+    
+    
 
     } catch(e) {
         console.error(e)

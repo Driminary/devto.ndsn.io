@@ -15,13 +15,13 @@ A website built with 11ty that pulls posts from a Dev.to RSS feed and generates 
 ![Architecture](https://i.ibb.co/6n6j5nG/devto-architecture.png)
 *(Click image to view full size. Made with [Excalidraw](https://excalidraw.com) - raw file: **architecture.excalidraw**)*
 
-Source folder : **```source```**
+Source folder : **```_source```**
 Output folder : **```_build```**
 
-To build:
+To build and serve:
 ```bash
 npm install
-npx @11ty/eleventy
+npx @11ty/eleventy --input=_source --serve
 ```
 
 ## Dev.to Feed URL

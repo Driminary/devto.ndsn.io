@@ -8,4 +8,4 @@ module.exports = async () => {
   } catch (e) {
     console.error(e.message);
   }
-});
+};

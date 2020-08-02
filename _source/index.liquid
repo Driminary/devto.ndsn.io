@@ -5,36 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="A list of all DEV.to posts by Tom Anderson (@ndsn)" />
     <meta name="author" content="Thomas Anderson" />
-
-    <title>Home</title>
+    <title>@ndsn on Dev.to</title>
   </head>
 
   <body>
     <h1>@ndsn on Dev.to</h1>
-
-    <p>Below you will find links to all the posts that I have published on <a href="https://dev.to">dev.to</a>.</p>
-
-    <h2>
-      Posts <small>(Pulled from <a href="{{ devtoapi.feed }}">Dev.to API</a>)</small>
-    </h2>
-
+    <p>Below you will find links to all the posts that I have published on <a href="https://dev.to">dev.to</a>. This is a completely static site built with <a href="https://11ty.dev">11ty</a></p>
+    <h2>Posts <small>(Pulled from <a href="{{ devtoapi.feed }}">Dev.to API</a>)</small></h2>
     <hr />
-
     <ul>
-      {% for item in devtoapi.posts %}
-      <li>
-        <p>Published on {{ item.published_timestamp | date: "%A %e %B %Y at %I:%M%P" }} by <a href="https://dev.to/{{ item.user.username }}">{{ item.user.name }}</a></p>
-        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
-        <h4>Categories: {{ item.tag_list | join: ', ' }}</h4>
-        {% if item.page_views_count %}
-        <h4>Views: {{ item.page_views_count }}</h4>
-        {% endif %}
-      </li>
+      {% for item in devtoapi.posts limit:5 %}
+        <li>
+          <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+          <p>{{ item.description }}</p>
+          <p>Categories: {{ item.tag_list | join: ', ' }}</p>
+          <p>Published on {{ item.published_timestamp | date: "%A %e %B %Y at %I:%M%P" }}</p>
+        </li>
       {% endfor %}
     </ul>
-
     <hr />
-
     <p>
       🧡 Tom Anderson<br />
       <a href="http://www.thomas-anderson.net">www.thomas-anderson.net</a><br />

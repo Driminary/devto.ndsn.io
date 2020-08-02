@@ -18,10 +18,10 @@ A website built with 11ty that pulls posts from a Dev.to RSS feed and generates 
 Source folder : **```_source```**
 Output folder : **```_build```**
 
-To build and serve:
+To build:
 ```bash
 npm install
-npx @11ty/eleventy --input=_source --serve
+npx @11ty/eleventy
 ```
 
 ## Dev.to Feed URL

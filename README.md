@@ -3,7 +3,7 @@
 [![Built with eleventy](https://img.shields.io/badge/Built%20with%2011ty-%E2%9C%93-brightgreen?logo=eleventy)](https://11ty.dev)
 [![Vercel hosting](https://img.shields.io/badge/Vercel%20Hosting-%E2%9C%93-brightgreen?logo=vercel)](https://vercel.com)
 
-> This repo contains the end-to-end source code for [devto.ndsn.io](devto.ndsn.io) and is published entirely free and under the MIT License - Hopefully the code and below description explains the architecture well!
+> This repo contains the end-to-end source code for [devto.ndsn.io](https://devto.ndsn.io) and is published entirely free and under the MIT License - Hopefully the code and below description explains the architecture well!
 
 > If you do end up using this for any commercial purpose, or found the code useful please consider buying me a coffee:
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-orange?logo=Buy%20Me%20A%20Coffee&logoColor=white)](https://www.buymeacoffee.com/ndsn)

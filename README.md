@@ -8,7 +8,9 @@
 > If you do end up using this for any commercial purpose, or found the code useful please consider buying me a coffee:
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-orange?logo=Buy%20Me%20A%20Coffee&logoColor=white)](https://www.buymeacoffee.com/ndsn)
 
-A website built with 11ty that pulls posts from a Dev.to RSS feed and generates a static site with links to the posts. [Live Demo](https://devto.ndsn.io/)
+A website built with 11ty that pulls posts from a Dev.to RSS feed and generates a static site with links to the posts. [Live Demo](https://devto.ndsn.io/) 
+
+Check out the associated blog post on Dev.to [here](https://dev.to/ndsn/add-dev-to-posts-to-your-static-site-in-20-lines-of-code-409h)!
 
 ## Architecture
 
